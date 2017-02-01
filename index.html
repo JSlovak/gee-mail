@@ -3,16 +3,53 @@
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
-      window.onload = function(){
+
+    window.onload = function (){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
-    </script>
+
+        var startCount = (window.geemails).length;
+        count.innerHTML = startCount;
+
+
+  /*for (i=0; i < subDisplay.length; i++)
+  for (i=0; i < sendDisplay.length; i++)
+  for (i=0; i < bodDisplay.length; i++)
+
+
+	var itemName = document.createElement("div");
+	 	var itemDescrip = document.createElement("div");
+	 	var itemPrice = document.createElement("div");
+
+	 	itemName.className = "name";
+	 	itemDescrip.className = "description";
+	 	itemPrice.className = "price";
+
+	 	itemName.innerHTML = shoppingCart[i].product;
+	 	itemDescrip.innerHTML = shoppingCart[i].description;
+	 	itemPrice.innerHTML = shoppingCart[i].price;
+
+	 	cart.appendChild(itemName);
+	 	cart.appendChild(itemDescrip);
+	 	cart.appendChild(itemPrice); */
+
+	};	
+	</script>
+
 	</head>
+
 	<body>
-		<div class="container" id="main">
-			Build Me!
+		<div id = "header" >
+			<img id= "logo" src="http://images.parenting.mdpcdn.com/sites/parenting.com/files/styles/slide/public/gee-mail-funny-app.jpg?itok=DvqbRAs-" alt="Gee Mail Logo">
+			<div id= "search bar" ></div>
 		</div>
+		<div id = "column" > Inbox 
+			<div id = "count" ></div>
+		</div>
+		<div id = "content" ></div>
+			
+	</div>
+	
+
 	</body>
 </html>
