@@ -20,6 +20,10 @@
 
 // "6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages."
 
+		/*function setInterval (){
+
+		}
+		*/
  
 
 /* 3. When your page loads, via JavaScript access our prepopulated data stored in the `window.geemails` variable. Each object in the array has the following properties:
@@ -34,7 +38,7 @@
 		* Date
 		* Sender
 		* Subject
-	* When clicking on a message you must provide some method of showing the message for that row.  */
+	  */
 
 
   
@@ -47,6 +51,7 @@
       	var emailBox = document.createElement("div");
       	emailBox.className = "emailDisplay";
       	content.appendChild(emailBox);
+      	emailBox.addEventListener("click",readMessage);
 
       	var pubDate = geemails[i].date;
       	var eDate = document.createElement("div");
@@ -54,42 +59,43 @@
       	eDate.innerHTML = "Date: " + pubDate;
       	emailBox.appendChild(eDate);
 
+      	var pubSubject = geemails[i].subject;
+      	var eSubject = document.createElement("div");
+      	eSubject.className = "subjectMessage";
+      	eSubject.innerHTML = pubSubject;
+      	emailBox.appendChild(eSubject);
+
       	var pubSender = geemails[i].sender;
       	var eSender = document.createElement("div");
       	eSender.className = "senderName";
       	eSender.innerHTML = "From: " + pubSender;
       	emailBox.appendChild(eSender);
 
-		var pubSubject = geemails[i].subject;
-      	var eSubject = document.createElement("div");
-      	eSubject.className = "subjectMessage";
-      	eSubject.innerHTML = pubSubject;
-      	emailBox.appendChild(eSubject);
-
       	var pubBody = geemails[i].body;
       	var eBody = document.createElement("div");
       	eBody.className = "messageBody";
       	eBody.innerHTML = pubBody;
       	emailBox.appendChild(eBody);
+					
+		}
+
+// * When clicking on a message you must provide some method of showing the message for that row.		
+
+		function readMessage (){
+
+			var getMessage = this.querySelectorAll(".messageBody")[0];
+
+			if ( getMessage.style.display === "none" ){ 
+				 getMessage.style.display = "block";
+
+			}else {
+				getMessage.style.display = "none";
+		}
     
      }
 
 
-	mailMessage.addEventListener("click",readMessage);
-
-		function readMessage (){
-
-			var getMessage = this.querySelectorAll(".mailMessage")[0];
-					console.log(getMessage);
-
-					if ( getMessage.style.display === "none" ){ 
-						 getMessage.style.display = "block";
-
-					}else {
-						getMessage.style.display = "none";
-					}
-					
-		}			
+				
 	
 
 // create button "read Message "     

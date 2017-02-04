@@ -13,7 +13,7 @@ header {
  #logo { 
 	height: 75px;
 	width:90%;
-	align-content: center;
+	float: right;
 
   }
 
@@ -21,6 +21,7 @@ header {
    	float:right;
    	text-align: left;
 	padding: 10px;
+	font-size: 12px;
 	font-weight: 700;
 	font-family: arial;
     
@@ -45,36 +46,26 @@ header {
 		border-bottom-width: 3px;
 		border-bottom-color: lightgray;
 
-
       }
 
      .emailDate { 
 		font-weight: 700;
 		justify-content: right;
 		float: right;
-		display: inline-block;
       }
 
      .subjectMessage { 
 		font-weight: 700;
+		font-size: 15px:;
       }
 
        .senderName { 
-		margin: 10px;
-		font: bold;
+		font-style: italic;
 
         }
 
         .subjectMessage { 
 		margin: 10px;
-         }
-
-        .mailMessage { 
-		margin-bottom: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
-		border: none;
-		text-decoration: none;
          }
 
        .messageBody { 
