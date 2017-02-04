@@ -1,32 +1,88 @@
 body { 
-	background-color: lightgray
+	background-color: lightgray;
+
  }
 
-#header { 
-	background-color: white;
-	width: 100%;
-	min-height: 5%;
-	max-height: 10%;
-	padding: 10px;
+header { 
+	position: fixed;
+	background-color: lightgray;
+	width: 10%;
 
  }
 
  #logo { 
 	height: 75px;
-	width:75px;
+	width:90%;
+	align-content: center;
+
   }
 
-  #column { 
-  	background-color: gray;
-  	width: 100px;
-  	height: 100%;
-	float: left;
+   #count {
+   	float:right;
+   	text-align: left;
 	padding: 10px;
+	font-weight: 700;
 	font-family: arial;
-	
-   }
-
-   #count { 
-	float: right;
+    
     }
+
+    #content { 
+    	background-color: lightgray;
+    	padding-top: 0%;
+		padding-right: 10%;
+		padding-left: 11%;
+		padding-bottom: 10%;
+		font-family: arial;
+		font-size: 12px;
+	
+     }
+
+     .emailDisplay { 
+
+     	background-color: white;
+     	padding: 10px;
+		border-bottom: solid;
+		border-bottom-width: 3px;
+		border-bottom-color: lightgray;
+
+
+      }
+
+     .emailDate { 
+		font-weight: 700;
+		justify-content: right;
+		float: right;
+		display: inline-block;
+      }
+
+     .subjectMessage { 
+		font-weight: 700;
+      }
+
+       .senderName { 
+		margin: 10px;
+		font: bold;
+
+        }
+
+        .subjectMessage { 
+		margin: 10px;
+         }
+
+        .mailMessage { 
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		border: none;
+		text-decoration: none;
+         }
+
+       .messageBody { 
+		display:none;
+	
+        }
+	
+
+
+
 

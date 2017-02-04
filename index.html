@@ -6,32 +6,99 @@
 
     window.onload = function (){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browse
 
-        var startCount = (window.geemails).length;
-        count.innerHTML = startCount;
+// "5. You must show an inbox count somewhere on the page to show the current number of messages in your inbox."        
+
+        console.log (window.geemails);
+
+        var startCount = window.geemails.length;
+        var emailCount = document.createElement("div");
+        emailCount.id = "count";
+        emailCount.innerHTML = "Inbox: " +startCount;
+        header.appendChild(emailCount);
+
+// "6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages."
+
+ 
+
+/* 3. When your page loads, via JavaScript access our prepopulated data stored in the `window.geemails` variable. Each object in the array has the following properties:
+	* date - The date message was sent
+	* subject - The subject of the message
+	* sender - The sender of the message
+	* body - The GeeMail message content
+
+4. With this data you must make a visual list of mail messages on the page with the following minimum requirements.
+
+	* Each message should have it's own row showing:
+		* Date
+		* Sender
+		* Subject
+	* When clicking on a message you must provide some method of showing the message for that row.  */
 
 
-  /*for (i=0; i < subDisplay.length; i++)
-  for (i=0; i < sendDisplay.length; i++)
-  for (i=0; i < bodDisplay.length; i++)
+  
+      for (var i = 0; i < geemails.length; i++) {
+      	//console.log(geemails[i]);
+      	//console.log(geemails[i].date);
+      	//console.log(geemails[i].sender);
+      	//console.log(geemails[i].subject);
+      	//console.log(geemails[i].body);
+      	var emailBox = document.createElement("div");
+      	emailBox.className = "emailDisplay";
+      	content.appendChild(emailBox);
+
+      	var pubDate = geemails[i].date;
+      	var eDate = document.createElement("div");
+      	eDate.className = "emailDate";
+      	eDate.innerHTML = "Date: " + pubDate;
+      	emailBox.appendChild(eDate);
+
+      	var pubSender = geemails[i].sender;
+      	var eSender = document.createElement("div");
+      	eSender.className = "senderName";
+      	eSender.innerHTML = "From: " + pubSender;
+      	emailBox.appendChild(eSender);
+
+		var pubSubject = geemails[i].subject;
+      	var eSubject = document.createElement("div");
+      	eSubject.className = "subjectMessage";
+      	eSubject.innerHTML = pubSubject;
+      	emailBox.appendChild(eSubject);
+
+      	var pubBody = geemails[i].body;
+      	var eBody = document.createElement("div");
+      	eBody.className = "messageBody";
+      	eBody.innerHTML = pubBody;
+      	emailBox.appendChild(eBody);
+    
+     }
 
 
-	var itemName = document.createElement("div");
-	 	var itemDescrip = document.createElement("div");
-	 	var itemPrice = document.createElement("div");
+	mailMessage.addEventListener("click",readMessage);
 
-	 	itemName.className = "name";
-	 	itemDescrip.className = "description";
-	 	itemPrice.className = "price";
+		function readMessage (){
 
-	 	itemName.innerHTML = shoppingCart[i].product;
-	 	itemDescrip.innerHTML = shoppingCart[i].description;
-	 	itemPrice.innerHTML = shoppingCart[i].price;
+			var getMessage = this.querySelectorAll(".mailMessage")[0];
+					console.log(getMessage);
 
-	 	cart.appendChild(itemName);
-	 	cart.appendChild(itemDescrip);
-	 	cart.appendChild(itemPrice); */
+					if ( getMessage.style.display === "none" ){ 
+						 getMessage.style.display = "block";
+
+					}else {
+						getMessage.style.display = "none";
+					}
+					
+		}			
+	
+
+// create button "read Message "     
+// create style default for body to "none"
+// create if/ else function for event listener -
+// create Event Listeners 
+	// for "Subject"
+		// if bold unbold
+		// if body display = none, body display = block
 
 	};	
 	</script>
@@ -39,13 +106,10 @@
 	</head>
 
 	<body>
-		<div id = "header" >
+		<header id = "header" >
 			<img id= "logo" src="http://images.parenting.mdpcdn.com/sites/parenting.com/files/styles/slide/public/gee-mail-funny-app.jpg?itok=DvqbRAs-" alt="Gee Mail Logo">
 			<div id= "search bar" ></div>
-		</div>
-		<div id = "column" > Inbox 
-			<div id = "count" ></div>
-		</div>
+		</header>
 		<div id = "content" ></div>
 			
 	</div>
