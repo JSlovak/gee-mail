@@ -20,42 +20,47 @@
 
 // "6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages."
 
-	setInterval( function newMessage (){
+	
 
 		//create a var with DOM to pull random from the arrays
-		var emailBox = document.createElement("div");
-      	emailBox.className = "emailDisplay";
-      	newContent.appendChild(emailBox);
-      	emailBox.addEventListener("click",readMessage);
 
-		var newDate = document.createElement("div");
-		newDate.className = "emailDate";
-		newDate.innerHTML = pubDate;
-		emailBox.appendChild(newDate);
+		 
+		  setInterval (function(){
 
-		var newSub = document.createElement("div");
-		newSub.className = "subjectMessage";
-		newSub.innerHTML = pubSubject;
-		emailBox.appendChild(newSub);
+			var emailBox = document.createElement("div");
+	      	emailBox.className = "emailDisplay";
+	      	newContent.appendChild(emailBox);
+	      	emailBox.addEventListener("click",readMessage);
 
-		var newSend = document.createElement("div");
-		newSend.className = "senderName";
-		newSend.innerHTML = pubSender;
-		emailBox.appendChild(newSend);
+			var pubDateB = geemails[Math.floor(Math.random ()*10)].date;
+			var newDate = document.createElement("div");
+			newDate.className = "emailDate";
+			newDate.innerHTML = pubDateB;
+			emailBox.appendChild(newDate); 
 
-		var newMessage = document.createElement("div");
-		newMessage.className = "messageBody";
-		newMessage.innerHTML = pubBody;
-		emailBox.appendChild(newMessage);
+			var pubSubjectB = geemails[Math.floor(Math.random()*10)].subject;
+			var newSub = document.createElement("div");
+			newSub.className = "subjectMessage";
+			newSub.innerHTML = pubSubjectB;
+			emailBox.appendChild(newSub);
 
-		/*var newCount = (window.geemails.legnth)++;
-		emailCount.innerHTML = "Inbox: " + newCount;
-		header.appendChild(emailCount);*/
+			var pubSenderB = geemails[Math.floor(Math.random() *10)].sender;
+			var newSend = document.createElement("div");
+			newSend.className = "senderName";
+			newSend.innerHTML = pubSenderB;
+			emailBox.appendChild(newSend);
+
+			var pubBodyB = geemails[Math.floor(Math.random()*10)].body;
+			var newMessage = document.createElement("div");
+			newMessage.className = "messageBody";
+			newMessage.innerHTML = pubBodyB;
+			emailBox.appendChild(newMessage);
+
+			// Close to function newEmail 
 		
+			}, 5000);
 
-	},5000);
-
-/* 3. When your page loads, via JavaScript access our prepopulated data stored in the `window.geemails` variable. Each object in the array has the following properties:
+/*3. When your page loads, via JavaScript access our prepopulated data stored in the `window.geemails` variable. Each object in the array has the following properties:
 	* date - The date message was sent
 	* subject - The subject of the message
 	* sender - The sender of the message
@@ -69,8 +74,6 @@
 		* Subject
 	  */
 
-
-  
       for (var i = 0; i < geemails.length; i++) {
       	//console.log(geemails[i]);
       	//console.log(geemails[i].date);
@@ -122,8 +125,6 @@
 		}
     
      }
-
-
 
 	};	
 
