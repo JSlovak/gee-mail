@@ -20,7 +20,7 @@
 
 // "6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages."
 
-	setInterval(function()) {
+	setInterval( function newMessage (){
 
 		//create a var with DOM to pull random from the arrays
 		var emailBox = document.createElement("div");
@@ -33,17 +33,17 @@
 		newDate.className = "emailDate";
 		emailBox.appendChild(newDate);
 
-		var genSub = [Math.floor(Math.random ()*10)].date
+		var genSub = subject[Math.floor(Math.random ()*10)];
 		var newSub = document.createElement("div");
 		newSub.className = "subjectMessage";
 		emailBox.appendChild(newSub);
 
-		var genSend = [Math.floor(Math.random ()*10)].date
+		var genSend = sender[Math.floor(Math.random ()*10)];
 		var newSend = document.createElement("div");
 		newSend.className = "senderName";
 		emailBox.appendChild(newSend);
 
-		var genMsg = [Math.floor(Math.random ()*10)].date
+		var genMsg = body[Math.floor(Math.random ()*10)];
 		var newMessage = document.createElement("div");
 		newMessage.className = "messageBody";
 		emailBox.appendChild(newMessage);
