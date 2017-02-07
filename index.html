@@ -25,32 +25,32 @@
 		//create a var with DOM to pull random from the arrays
 		var emailBox = document.createElement("div");
       	emailBox.className = "emailDisplay";
-      	content.appendChild(emailBox);
+      	newContent.appendChild(emailBox);
       	emailBox.addEventListener("click",readMessage);
 
-      	newDate.innerHTML = getRandomDate;
 		var newDate = document.createElement("div");
 		newDate.className = "emailDate";
+		newDate.innerHTML = pubDate;
 		emailBox.appendChild(newDate);
 
-		var genSub = subject[Math.floor(Math.random ()*10)];
 		var newSub = document.createElement("div");
 		newSub.className = "subjectMessage";
+		newSub.innerHTML = pubSubject;
 		emailBox.appendChild(newSub);
 
-		var genSend = sender[Math.floor(Math.random ()*10)];
 		var newSend = document.createElement("div");
 		newSend.className = "senderName";
+		newSend.innerHTML = pubSender;
 		emailBox.appendChild(newSend);
 
-		var genMsg = body[Math.floor(Math.random ()*10)];
 		var newMessage = document.createElement("div");
 		newMessage.className = "messageBody";
+		newMessage.innerHTML = pubBody;
 		emailBox.appendChild(newMessage);
 
-		var newCount = (window.geemails.legnth)++;
+		/*var newCount = (window.geemails.legnth)++;
 		emailCount.innerHTML = "Inbox: " + newCount;
-		header.appendChild(emailCount);
+		header.appendChild(emailCount);*/
 		
 
 	},5000);
@@ -136,6 +136,7 @@
 			<img id= "logo" src="http://images.parenting.mdpcdn.com/sites/parenting.com/files/styles/slide/public/gee-mail-funny-app.jpg?itok=DvqbRAs-" alt="Gee Mail Logo">
 			<div id= "search bar" ></div>
 		</header>
+		<div id = "newContent" ></div>
 		<div id = "content" ></div>
 			
 	</div>

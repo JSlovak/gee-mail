@@ -1,31 +1,39 @@
 body { 
 	background-color: lightgray;
 
- }
+ 	}
 
 header { 
 	position: fixed;
 	background-color: lightgray;
 	width: 10%;
 
- }
+ 	}
 
- #logo { 
-	height: 75px;
-	width:90%;
-	float: right;
+	 	#logo { 
+		height: 75px;
+		width:90%;
+		float: right;
 
-  }
+	  	}
 
-   #count {
-   	float:right;
-   	text-align: left;
-	padding: 10px;
-	font-size: 12px;
-	font-weight: 700;
-	font-family: arial;
+	   #count {
+	   	float:right;
+	   	text-align: left;
+		padding: 10px;
+		font-size: 12px;
+		font-weight: 700;
+		font-family: arial;
     
-    }
+    	}
+
+     #newContent { 
+    	background-color: lightgray;
+    	padding-top: 0%;
+		padding-right: 10%;
+		padding-left: 11%;
+
+		}
 
     #content { 
     	background-color: lightgray;
@@ -33,45 +41,45 @@ header {
 		padding-right: 10%;
 		padding-left: 11%;
 		padding-bottom: 10%;
+    
+     	}
+
+		 .emailDisplay { 
+			background-color: white;
 		font-family: arial;
 		font-size: 12px;
-	
-     }
-
-     .emailDisplay { 
-
-     	background-color: white;
-     	padding: 10px;
+			padding: 10px;
 		border-bottom: solid;
 		border-bottom-width: 3px;
 		border-bottom-color: lightgray;
 
-      }
+		  }
 
-     .emailDate { 
-		font-weight: 700;
-		justify-content: right;
-		float: right;
-      }
+			 .emailDate { 
+			font-weight: 700;
+			justify-content: right;
+			float: right;
 
-     .subjectMessage { 
-		font-weight: 700;
-		font-size: 15px:;
-      }
+		  	}
 
-       .senderName { 
-		font-style: italic;
+		 	.subjectMessage { 
+			font-weight: 700;
+			font-size: 15px:;
 
-        }
+		  	}
 
-        .subjectMessage { 
-		margin: 10px;
-         }
+		   	.sendername { 
+			font-style: italic;
+			padding; 3px;
+			margin-bottom: 1px, solid, gray;
 
-       .messageBody { 
-		display:none;
-	
-        }
+		    }
+
+		   	.messageBody { 
+			display:none;
+
+
+		    }
 	
 
 
