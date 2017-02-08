@@ -12,87 +12,8 @@
 
         console.log (window.geemails);
 
-        var startCount = window.geemails.length;
-        var emailCount = document.createElement("div");
-        emailCount.id = "count";
-        emailCount.innerHTML = "Inbox: " + startCount;
-        header.appendChild(emailCount);
 
-        /*var newCount = document.getElementById('count');
-            newCount.innerHTML = 'Messages ' + geemailsLoaded.length;
-            for (i=0; i<hideBody.length; i++)*/
-
-// "6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages."
-
-	
-
-		//create a var with DOM to pull random from the arrays
-
-		/*var newItem = document.createElement("LI");       // Create a <li> node
-		var textnode = document.createTextNode("Water");  // Create a text node
-		newItem.appendChild(textnode);                    // Append the text to <li>
-
-		var list = document.getElementById("myList");    // Get the <ul> element to insert a new node
-
-		list.insertBefore(newItem, list.childNodes[0]);  // Insert <li> before the first child of <ul> */
-
-
-			  setInterval (function(){
-
-				var emailBox = document.createElement("div");
-		      	emailBox.className = "emailDisplay"; 
-		      	content.insertBefore(emailBox, content.childNodes[0]);
-		      	emailBox.addEventListener("click",readMessage);
-
-				var pubDateB = geemails[Math.floor(Math.random ()*10)].date;
-				var newDate = document.createElement("div");
-				newDate.className = "emailDate";
-				newDate.innerHTML = pubDateB;
-				emailBox.appendChild(newDate);
-
-				var pubSubjectB = geemails[Math.floor(Math.random()*10)].subject;
-				var newSub = document.createElement("div");
-				newSub.className = "subjectMessage";
-				newSub.innerHTML = pubSubjectB;
-				emailBox.appendChild(newSub);
-
-				var pubSenderB = geemails[Math.floor(Math.random() *10)].sender;
-				var newSend = document.createElement("div");
-				newSend.className = "senderName";
-				newSend.innerHTML = pubSenderB;
-				emailBox.appendChild(newSend);
-
-				var pubBodyB = geemails[Math.floor(Math.random()*10)].body;
-				var newMessage = document.createElement("div");
-				newMessage.className = "messageBody";
-				newMessage.innerHTML = pubBodyB;
-				emailBox.appendChild(newMessage);
-
-				/*var newEmail = getElementsByClassName ("emailDisplay");
-				content.insertBefore(newEmail, content.childNodes[0]);*/
-
-				// Close to function newEmail 
-			
-				}, 5000);
-
-
-
-
-/*3. When your page loads, via JavaScript access our prepopulated data stored in the `window.geemails` variable. Each object in the array has the following properties:
-	* date - The date message was sent
-	* subject - The subject of the message
-	* sender - The sender of the message
-	* body - The GeeMail message content
-
-4. With this data you must make a visual list of mail messages on the page with the following minimum requirements.
-
-	* Each message should have it's own row showing:
-		* Date
-		* Sender
-		* Subject
-	  */
-
-      for (var i = 0; i < geemails.length; i++) {
+        for (var i = 0; i < geemails.length; i++) {
       	//console.log(geemails[i]);
       	//console.log(geemails[i].date);
       	//console.log(geemails[i].sender);
@@ -102,6 +23,16 @@
       	emailBox.className = "emailDisplay";
       	content.appendChild(emailBox);
       	emailBox.addEventListener("click",readMessage);
+      	//emailBox.addEventListener("click",newIcon);
+
+      	var emailIcon = document.createElement("div");
+      	emailIcon.id = "iconSpot";
+      	emailBox.appendChild(emailIcon);
+
+      	var icon = document.createElement("img");
+      	icon.className = "envelope";
+      	icon.src = "http://www.iconshock.com/img_vista/WINDOWS8/mail/jpg/envelope_icon.jpg";
+      	emailIcon.appendChild(icon);
 
       	var pubDate = geemails[i].date;
       	var eDate = document.createElement("div");
@@ -129,6 +60,13 @@
 					
 		}
 
+        var emailCount = document.createElement("div");
+        emailCount.id = "count";
+        var geemailCount = geemails.length;
+        emailCount.innerHTML = "Inbox: " + geemailCount;
+        //var totalCount = document.createTextNode(geemailCount);
+        header.appendChild(emailCount);
+
 // * When clicking on a message you must provide some method of showing the message for that row.		
 
 		function readMessage (){
@@ -140,9 +78,112 @@
 
 			}else {
 				getMessage.style.display = "none";
-		}
+			}
     
-     }
+     	}
+
+
+   
+     
+
+   
+
+// "6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages."
+
+	
+
+		//create a var with DOM to pull random from the arrays
+
+		/* var list = document.getElementById("myList");    // Get the <ul> element to insert a new node
+
+		list.insertBefore(newItem, list.childNodes[0]);  // Insert <li> before the first child of <ul> */
+
+
+			  setInterval(function(){
+        		
+        		geemailCount++;
+        		emailCount.innerHTML = "Inbox: " + geemailCount;
+        		
+
+				var emailBox = document.createElement("div");
+		      	emailBox.className = "emailDisplay"; 
+		      	content.insertBefore(emailBox, content.childNodes[0]);
+		      	emailBox.addEventListener("click",readMessage);
+
+		      	var emailIcon = document.createElement("div");
+		      	emailIcon.id = "iconSpot";
+		      	emailBox.appendChild(emailIcon);
+
+		      	var icon = document.createElement("img");
+		      	icon.className = "envelope";
+		      	icon.src = "http://www.iconshock.com/img_vista/WINDOWS8/mail/jpg/envelope_icon.jpg";
+		      	emailIcon.appendChild(icon);
+
+				var pubDateB = geemails[Math.floor(Math.random ()*10)].date;
+				var newDate = document.createElement("div");
+				newDate.className = "emailDate";
+				newDate.innerHTML = pubDateB;
+				emailBox.appendChild(newDate);
+
+				var pubSubjectB = geemails[Math.floor(Math.random()*10)].subject;
+				var newSub = document.createElement("div");
+				newSub.className = "subjectMessage";
+				newSub.innerHTML = pubSubjectB;
+				emailBox.appendChild(newSub);
+
+				var pubSenderB = geemails[Math.floor(Math.random() *10)].sender;
+				var newSend = document.createElement("div");
+				newSend.className = "senderName";
+				newSend.innerHTML = pubSenderB;
+				emailBox.appendChild(newSend);
+
+				var pubBodyB = geemails[Math.floor(Math.random()*10)].body;
+				var newMessage = document.createElement("div");
+				newMessage.className = "messageBody";
+				newMessage.innerHTML = pubBodyB;
+				emailBox.appendChild(newMessage);
+
+
+
+				}, 3000);
+
+				/*var newCount = emailCount++;
+				emailCount.innerHTML = "Inbox: " + newCount;
+				header.appendChild(emailCount);
+				console.log(newCount);*/
+
+				//var emailCount = document.createElement("div");
+        		//emailCount.id = "count";
+       	
+       			/*emailCount.innerHTML = "Inbox: " + ++;
+       			header.appendChild(emailCount);
+*/        		//header.appendChild(emailCount);
+        		//console.log(geemails.length++);
+
+				/*var newEmail = getElementsByClassName ("emailDisplay");
+				content.insertBefore(newEmail, content.childNodes[0]);*/
+
+				// Close to function newEmail 
+			
+
+
+
+
+/*3. When your page loads, via JavaScript access our prepopulated data stored in the `window.geemails` variable. Each object in the array has the following properties:
+	* date - The date message was sent
+	* subject - The subject of the message
+	* sender - The sender of the message
+	* body - The GeeMail message content
+
+4. With this data you must make a visual list of mail messages on the page with the following minimum requirements.
+
+	* Each message should have it's own row showing:
+		* Date
+		* Sender
+		* Subject
+	  */
+
+      
 
 	};	
 

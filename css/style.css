@@ -55,6 +55,20 @@ header {
 
 		  }
 
+		  	#iconSpot { 
+		  		float:left;
+		  		margin-right: 10px;
+	
+
+		  	 }
+
+		  	.envelope { 
+		  		width:15px;
+		  		height: auto;
+
+			
+		  	 }
+
 			 .emailDate { 
 			font-weight: 700;
 			justify-content: right;
@@ -75,7 +89,11 @@ header {
 
 		    }
 
-		   	.messageBody { 
+		   	.messageBody {
+		   	border-bottom-style: solid;
+		   	border-bottom-color: lightgray;	
+		   	border-bottom-width: 1px;
+		   	padding:5px;
 			display:none;
 
 
